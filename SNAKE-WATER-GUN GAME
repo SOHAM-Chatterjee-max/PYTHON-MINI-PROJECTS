@@ -1,0 +1,48 @@
+import random 
+print("Snake-Water-Gun Game") 
+print("Rules:Snake drinks Water → Snake wins\n Water damages Gun → Water wins \n Gun 
+shoots Snake → Gun wins \nIf both players choose the same object, it's a tie") 
+comp_win=0 
+user_win=0 
+tie=0 
+round=1 
+ 
+ 
+n=int((input("Enter no.of rounds:"))) 
+print("Enter s for Snake , w for Water , g for Gun") 
+while(round<=n): 
+        comp=random.choice(['s','w','g']) 
+        user=input("Enter your choice:") 
+        if(comp=='s'and user=='w'): 
+            comp_win+=1 
+            print("Computer wins this round!") 
+        elif(comp=='s'and user=='g'): 
+             user_win+=1 
+             print("You have won this round!") 
+        elif(comp=='w'and user=='g'): 
+             comp_win+=1 
+             print("Computer wins this round!") 
+        elif(comp=='w'and user=='s'): 
+              user_win+=1 
+              print("You have won this round!") 
+        elif(comp=='g'and user=='s'): 
+              comp_win+=1 
+              print("Computer wins this round!") 
+        elif(comp=='g'and user=='w'): 
+              user_win+=1 
+              print("You have won this round!") 
+        elif(comp=='s'and user=='s'): 
+              tie+=1 
+              print("Round tied!") 
+        elif(comp=='w'and user=='w'): 
+             tie+=1 
+             print("Round tied!") 
+        elif(comp=='g'and user=='g'): 
+             tie+=1 
+             print("Round tied!") 
+        else: 
+            print("Invalid choice!") 
+    round+=1 
+print("No.of times the Computer wins= :",comp_win) 
+print("No.of times the user wins=:",user_win) 
+print("No.of times the game is tied:",tie) 
