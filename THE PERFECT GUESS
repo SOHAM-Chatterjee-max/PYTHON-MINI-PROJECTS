@@ -1,0 +1,18 @@
+import random
+a=random.randint(1,100)
+print("Game of the perfect guess ")
+n=int(input("Guess a number:"))
+c=0
+while(a!=n):
+   
+     if(n>a):
+         c+=1
+         print("Lower number please")
+         n=int(input("Guess a number:"))
+     else:
+         c+=1
+         print("Higher number please")
+         n=int(input("Guess a number:"))
+     
+print("Guessed number is correct!")
+print("No.of guesses to arrive at the correct answer=",(c+1))
